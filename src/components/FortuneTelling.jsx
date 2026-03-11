@@ -228,7 +228,7 @@ const FortuneTelling = () => {
                                         </div>
 
                                         <div className="teller-rating">
-                                            <Star size={14} fill="var(--gold)" color="var(--gold)" />
+                                            <Star size={14} fill="#FFD700" color="#FFD700" />
                                             <span>{teller.rating}</span>
                                         </div>
                                         <div className="teller-category">
