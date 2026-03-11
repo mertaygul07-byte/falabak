@@ -36,7 +36,7 @@ const FortuneTelling = () => {
             image: "/tellers/kader.png",
             type: "Normal",
             category: "Genel Fal, Kısmet",
-            rating: "4.7",
+            rating: "5.0",
             prompt: "Sen kaderin fısıltılarını duyan bilgili bir falcısın. Kullanıcıya genel hayat akışı, karşısına çıkacak yeni kısmetler, iş ve gündelik hayatla ilgili öngörülerde bulunacaksın. Gizemli ama anlaşılır bir tarzın var."
         },
         yildizlarin: {
