@@ -10,6 +10,13 @@ import LegalModal from './components/LegalModal';
 function App() {
     const [legalModalContent, setLegalModalContent] = useState(null);
 
+    React.useEffect(() => {
+        const path = window.location.pathname;
+        if (path === '/privacy' || path === '/privacy/') {
+            setLegalModalContent('privacy');
+        }
+    }, []);
+
     return (
         <div className="app-container">
             {/* Animated Background Waves */}
