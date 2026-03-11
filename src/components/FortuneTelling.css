@@ -1,0 +1,262 @@
+.fortune-section {
+    padding: 6rem 2rem;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fortune-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fortune-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.fortune-header .subtitle {
+    color: #e0aaff;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.fortune-container {
+    padding: 3rem;
+    border-radius: 24px;
+    background: rgba(26, 11, 46, 0.4);
+}
+
+.upload-section h3,
+.tellers-section h3 {
+    font-size: 1.4rem;
+    color: var(--f3f4f6);
+}
+
+.image-boxes {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.image-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.upload-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    border: 2px dashed rgba(212, 175, 55, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--color-text-muted);
+}
+
+.upload-box:hover {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.1);
+    color: white;
+}
+
+.tellers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.teller-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.teller-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.teller-card.selected {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(157, 78, 221, 0.05));
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.teller-card h4 {
+    font-size: 1.3rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.teller-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.teller-category {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.premium-badge {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: linear-gradient(135deg, #ffbe0b, #e09f00);
+    color: #1a0b2e;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 190, 11, 0.4);
+    display: flex;
+    align-items: center;
+    border: 1px solid #ffeba0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-section {
+    text-align: center;
+}
+
+.submit-btn {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.submit-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    animation: pulse-glow 2s infinite;
+}
+
+.limit-reached-message {
+    padding: 2rem;
+    border-radius: 16px;
+    background: rgba(157, 78, 221, 0.1);
+    border: 1px solid var(--gold);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.limit-reached-message h3 {
+    font-size: 1.5rem;
+}
+
+.limit-reached-message p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--f3f4f6);
+}
+
+.reading-result {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.result-header h3 {
+    font-size: 1.5rem;
+}
+
+.reading-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f8f9fa;
+    white-space: pre-wrap;
+}
+
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+    color: var(--gold);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .fortune-container {
+        padding: 1.5rem;
+    }
+
+    .image-boxes {
+        justify-content: center;
+    }
+}
