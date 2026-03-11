@@ -253,20 +253,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(26, 11, 46, 0.4);
+    background: rgba(15, 7, 26, 0.85);
     z-index: 10;
     text-align: center;
     padding: 2rem;
+    backdrop-filter: blur(4px);
 }
 
 .blur-overlay p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 800;
     color: #FFD700;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-    background: rgba(26, 11, 46, 0.8);
-    padding: 0.5rem 1.5rem;
-    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.2rem 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    line-height: 1.4;
 }
 
 .teller-profile-img-container {
