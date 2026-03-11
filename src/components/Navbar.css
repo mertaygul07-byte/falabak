@@ -31,15 +31,15 @@
 }
 
 .navbar-logo-img {
-    height: 120px;
-    border-radius: 16px;
+    height: 64px;
+    border-radius: 12px;
     display: block;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(212, 175, 55, 0.15);
-    transition: background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .navbar.scrolled .navbar-logo-img {
-    height: 80px;
+    height: 48px;
 }
 
 .navbar-logo-img:hover {
@@ -91,14 +91,17 @@
 }
 
 .instagram-link {
-    color: var(--color-rose-gold);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
 }
 

@@ -24,6 +24,7 @@ const FortuneTelling = () => {
         gonul: {
             id: 'gonul',
             name: "Gönül Aynası",
+            image: "/tellers/gonul.png",
             type: "Normal",
             category: "Aşk, İlişkiler",
             rating: "4.8",
@@ -32,6 +33,7 @@ const FortuneTelling = () => {
         kader: {
             id: 'kader',
             name: "Kader Fısıltısı",
+            image: "/tellers/kader.png",
             type: "Normal",
             category: "Genel Fal, Kısmet",
             rating: "4.7",
@@ -40,6 +42,7 @@ const FortuneTelling = () => {
         yildizlarin: {
             id: 'yildizlarin',
             name: "Yıldızların Fatihi",
+            image: "/tellers/yildizlarin.png",
             type: "Premium",
             category: "Astroloji, Yıldızname",
             rating: "5.0",
@@ -48,6 +51,7 @@ const FortuneTelling = () => {
         kozmik: {
             id: 'kozmik',
             name: "Kozmik Bilge",
+            image: "/tellers/kozmik.png",
             type: "Premium",
             category: "Karma, Ruhsal",
             rating: "4.9",
@@ -56,6 +60,7 @@ const FortuneTelling = () => {
         zamanin: {
             id: 'zamanin',
             name: "Zamanın Kahini",
+            image: "/tellers/zamanin.png",
             type: "Premium",
             category: "Gelecek, Zaman",
             rating: "4.9",
@@ -214,8 +219,8 @@ const FortuneTelling = () => {
                                 )}
 
                                 <div className="teller-card-content" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                    <div className="teller-profile-icon" style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '50%', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <User size={30} color="var(--f3f4f6)" />
+                                    <div className="teller-profile-img-container">
+                                        <img src={teller.image} alt={teller.name} className="teller-profile-img" />
                                     </div>
                                     <div className="teller-details">
                                         <div className="teller-card-header">
@@ -262,9 +267,19 @@ const FortuneTelling = () => {
                             <h3 className="brand-font text-gold">Kahve Falı Yorumun</h3>
                             <CheckCircle2 className="text-gold" />
                         </div>
-                        <div className="reading-content">
-                            {reading}
-                            {isLoading && <span className="cursor-blink">|</span>}
+                        <div className="reading-content-wrapper">
+                            <div className="reading-content blurred">
+                                {reading}
+                                {isLoading && <span className="cursor-blink">|</span>}
+                            </div>
+                            {!isLoading && reading && (
+                                <div className="blur-overlay glass">
+                                    <p className="brand-font">Falı Görmek İçin Uygulamayı İndir</p>
+                                    <button className="btn-primary glowing-gold brand-font mt-2">
+                                        Uygulamayı İndir
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}

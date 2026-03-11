@@ -16,10 +16,8 @@ const Footer = ({ onOpenLegal }) => {
                         <Shield size={16} />
                         Gizlilik Politikası
                     </button>
-                    <span className="footer-separator" style={{ display: 'none' }}>•</span>
-                    <a className="footer-link" href="http://falabak.app/app-ads.txt" target="_blank" rel="noopener noreferrer" style={{ display: 'none' }}>
-                        <FileText size={16} />
-                        app-ads.txt
+                    <a className="footer-link" href="https://falabak.com.tr/privacy" style={{ display: 'none' }}>
+                        Gizlilik Politikası (Hidden)
                     </a>
                 </div>
                 <div className="footer-copyright">

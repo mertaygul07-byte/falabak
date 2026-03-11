@@ -40,7 +40,7 @@ const Navbar = ({ onOpenLegal }) => {
                         className="instagram-link"
                     >
                         <Instagram size={28} />
-                        <span>Takip Et</span>
+                        <span>Bizi Takip Et</span>
                     </a>
                     <button className="download-btn glowing-gold brand-font">
                         Uygulamayı İndir
