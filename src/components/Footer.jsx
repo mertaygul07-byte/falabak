@@ -19,6 +19,9 @@ const Footer = ({ onOpenLegal }) => {
                     <a className="footer-link" href="https://falabak.com.tr/privacy" style={{ display: 'none' }}>
                         Gizlilik Politikası (Hidden)
                     </a>
+                    <a className="footer-link" href="https://www.falabak.com.tr/app-ads.txt" style={{ display: 'none' }}>
+                        App Ads (Hidden)
+                    </a>
                 </div>
                 <div className="footer-copyright">
                     &copy; {new Date().getFullYear()} FalaBak. Tüm hakları saklıdır.
