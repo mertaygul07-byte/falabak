@@ -1,4 +1,1 @@
-# FalaBak app-ads.txt
-# This file is used for ad network verification.
-# Add your specific ad network lines here if provided.
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-6368932989229782, DIRECT, f08c47fec0942fa0
