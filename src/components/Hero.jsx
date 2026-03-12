@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Sparkles, Moon, Star, Wand2 } from 'lucide-react';
+import ZodiacWheel from './ZodiacWheel';
+import FloatingElements from './FloatingElements';
 import './Hero.css';
 
 const Hero = () => {
@@ -7,12 +9,13 @@ const Hero = () => {
 
     useEffect(() => {
         // Generate random stars for background
-        const newStars = Array.from({ length: 40 }).map((_, i) => ({
+        const newStars = Array.from({ length: 60 }).map((_, i) => ({
             id: i,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
-            size: `${Math.random() * 3 + 1}px`,
+            size: `${Math.random() * 2 + 1}px`,
             duration: `${Math.random() * 3 + 2}s`,
+            delay: `${Math.random() * 5}s`,
         }));
         setStars(newStars);
     }, []);
@@ -30,19 +33,21 @@ const Hero = () => {
                             width: star.size,
                             height: star.size,
                             '--duration': star.duration,
+                            animationDelay: star.delay,
                         }}
                     />
                 ))}
             </div>
 
-            <div className="zodiac-wheel-container">
-                <div className="zodiac-wheel"></div>
-            </div>
+            <ZodiacWheel />
+            <FloatingElements />
 
             <div className="hero-content">
-                <div className="hero-badge glass floating">
-                    <Sparkles size={16} className="text-gold" />
-                    <span>Mistik Dünyaya Hoş Geldiniz</span>
+                <div className="hero-badge ornate-badge floating">
+                    <div className="badge-ornament left"></div>
+                    <Sparkles size={14} className="text-gold" />
+                    <span>Mistik Dünya'ya Hoş Geldiniz</span>
+                    <div className="badge-ornament right"></div>
                 </div>
 
                 <h1 className="hero-title brand-font text-gradient">
@@ -65,7 +70,10 @@ const Hero = () => {
             </div>
 
             <div className="hero-decorations">
-                <Moon className="decor-moon text-gold floating" size={64} />
+                <div className="moon-container floating">
+                    <Moon className="decor-moon text-gold" size={80} />
+                    <div className="moon-glow"></div>
+                </div>
                 <Star className="decor-star text-rose-gold floating-delayed" size={48} />
             </div>
         </section>

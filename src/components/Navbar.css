@@ -58,9 +58,10 @@
 .navbar-links a {
     color: var(--color-text);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-family: 'Playfair Display', serif;
+    transition: all 0.3s ease;
     margin: 0;
 }
 
@@ -94,10 +95,7 @@
 }
 
 .instagram-link {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color-gold);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
