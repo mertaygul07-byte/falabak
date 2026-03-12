@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { auth } from '../firebase';
-import { signInWithEmailAndPassword, deleteUser, GoogleAuthProvider, OAuthProvider, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, deleteUser, GoogleAuthProvider, OAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult } from 'firebase/auth';
 import { X, Trash2, AlertTriangle, CheckCircle, Loader } from 'lucide-react';
 import './DeleteAccountModal.css';
 
@@ -13,6 +13,21 @@ const DeleteAccountModal = ({ onClose }) => {
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
+
+        // Check for redirect result (Apple Sign-In redirect flow)
+        getRedirectResult(auth).then((result) => {
+            if (result && result.user) {
+                setPendingUser(result.user);
+                setStep('confirm');
+            }
+        }).catch((error) => {
+            console.error('Redirect result error:', error.code, error.message);
+            if (error.code !== 'auth/popup-closed-by-user') {
+                setErrorMessage('Apple ile giriş yapılırken bir hata oluştu. Lütfen tekrar deneyin.');
+                setStep('error');
+            }
+        });
+
         return () => {
             document.body.style.overflow = 'unset';
         };
@@ -37,7 +52,7 @@ const DeleteAccountModal = ({ onClose }) => {
             setStep('confirm');
         } catch (error) {
             console.error('Social login error:', error.code, error.message);
-            let msg = 'Giriş yapılırken bir hata oluştu.';
+            let msg = 'Giriş yapılırken bir hata oluştu. Lütfen tekrar deneyin.';
             if (error.code === 'auth/popup-closed-by-user') {
                 msg = 'Giriş penceresi kapatıldı. Lütfen tekrar deneyin.';
             } else if (error.code === 'auth/cancelled-popup-request') {
@@ -47,7 +62,7 @@ const DeleteAccountModal = ({ onClose }) => {
             } else if (error.code === 'auth/popup-blocked') {
                 msg = 'Tarayıcınız açılır pencereyi engelledi. Lütfen izin verin ve tekrar deneyin.';
             } else if (error.code === 'auth/unauthorized-domain') {
-                msg = 'Bu alan adı yetkilendirilmemiş. Lütfen Firebase Console\'dan alan adını ekleyin.';
+                msg = 'Bu alan adı yetkilendirilmemiş. Lütfen yöneticiyle iletişime geçin.';
             }
             setErrorMessage(msg);
             setStep('error');
@@ -63,7 +78,8 @@ const DeleteAccountModal = ({ onClose }) => {
         const provider = new OAuthProvider('apple.com');
         provider.addScope('email');
         provider.addScope('name');
-        handleSocialLogin(provider);
+        // Apple uses redirect flow for better compatibility
+        signInWithRedirect(auth, provider);
     };
 
     const handleConfirmDelete = async () => {
