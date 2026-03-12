@@ -5,71 +5,89 @@ const ZodiacWheel = () => {
         <div className="zodiac-wheel-container">
             <svg viewBox="0 0 500 500" className="zodiac-wheel-svg">
                 {/* Outer Ring with Symbols */}
-                <circle cx="250" cy="250" r="240" fill="none" stroke="var(--color-gold)" strokeWidth="1" opacity="0.3" />
-                <circle cx="250" cy="250" r="215" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" opacity="0.5" />
+                <circle cx="250" cy="250" r="235" fill="none" stroke="var(--color-gold)" strokeWidth="1.5" opacity="0.4" />
+                <circle cx="250" cy="250" r="210" fill="none" stroke="var(--color-gold)" strokeWidth="1" opacity="0.6" />
 
                 {/* Zodiac Sign Dividers */}
                 {[...Array(12)].map((_, i) => {
                     const angle = (i * 30) * (Math.PI / 180);
-                    const x1 = 250 + 215 * Math.cos(angle);
-                    const y1 = 250 + 215 * Math.sin(angle);
-                    const x2 = 250 + 240 * Math.cos(angle);
-                    const y2 = 250 + 240 * Math.sin(angle);
+                    const x1 = 250 + 210 * Math.cos(angle);
+                    const y1 = 250 + 210 * Math.sin(angle);
+                    const x2 = 250 + 235 * Math.cos(angle);
+                    const y2 = 250 + 235 * Math.sin(angle);
                     return (
-                        <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--color-gold)" strokeWidth="1" opacity="0.4" />
+                        <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--color-gold)" strokeWidth="1" opacity="0.5" />
                     );
                 })}
 
-                {/* Symbols (Using small representative paths/shapes to match complexity) */}
+                {/* Celestial Nodes */}
                 {[...Array(12)].map((_, i) => {
                     const angle = (i * 30 + 15) * (Math.PI / 180);
-                    const x = 250 + 227 * Math.cos(angle);
-                    const y = 250 + 227 * Math.sin(angle);
+                    const x = 250 + 222 * Math.cos(angle);
+                    const y = 250 + 222 * Math.sin(angle);
                     return (
-                        <g key={i} transform={`translate(${x}, ${y}) rotate(${i * 30 + 15})`}>
-                            <circle r="3" fill="var(--color-gold)" opacity="0.6" />
-                            <path d="M-5,0 L5,0 M0,-5 L0,5" stroke="var(--color-gold)" strokeWidth="0.5" opacity="0.3" />
+                        <g key={i} transform={`translate(${x}, ${y})`}>
+                            <circle r="3" fill="var(--color-gold)" opacity="0.8" />
+                            <circle r="6" fill="none" stroke="var(--color-gold)" strokeWidth="0.5" opacity="0.3" />
                         </g>
                     );
                 })}
 
-                {/* Inner Ring with Constellations */}
-                <circle cx="250" cy="250" r="185" fill="none" stroke="var(--color-gold)" strokeWidth="1" opacity="0.4" />
-                <circle cx="250" cy="250" r="145" fill="none" stroke="var(--color-gold)" strokeWidth="0.5" opacity="0.2" />
-
-                {/* Constellation Lines (Representative of the complex starry lines in the image) */}
-                {[...Array(8)].map((_, i) => {
-                    const angle1 = (i * 45 + Math.random() * 20) * (Math.PI / 180);
-                    const angle2 = (angle1 + 0.5 + Math.random() * 1.5);
-                    const r1 = 150 + Math.random() * 30;
-                    const r2 = 150 + Math.random() * 30;
+                {/* Complex Constellation Lines Grid */}
+                {[...Array(24)].map((_, i) => {
+                    const angle1 = (i * 15) * (Math.PI / 180);
+                    const angle2 = ((i + 3) * 15) * (Math.PI / 180);
+                    const r = 160;
                     return (
                         <line
                             key={i}
-                            x1={250 + r1 * Math.cos(angle1)}
-                            y1={250 + r1 * Math.sin(angle1)}
-                            x2={250 + r2 * Math.cos(angle2)}
-                            y2={250 + r2 * Math.sin(angle2)}
+                            x1={250 + r * Math.cos(angle1)}
+                            y1={250 + r * Math.sin(angle1)}
+                            x2={250 + r * Math.cos(angle2)}
+                            y2={250 + r * Math.sin(angle2)}
                             stroke="var(--color-gold)"
                             strokeWidth="0.5"
-                            opacity="0.3"
+                            opacity="0.2"
                         />
                     );
                 })}
 
-                {/* Main Center Circles */}
-                <circle cx="250" cy="250" r="60" fill="none" stroke="var(--color-gold)" strokeWidth="2" opacity="0.5" />
-                <circle cx="250" cy="250" r="50" fill="none" stroke="var(--color-rose-gold)" strokeWidth="0.5" opacity="0.2" />
+                {/* Inner Decorative Rings */}
+                <circle cx="250" cy="250" r="180" fill="none" stroke="var(--color-gold)" strokeWidth="1" opacity="0.3" />
+                <circle cx="250" cy="250" r="150" fill="none" stroke="var(--color-gold)" strokeWidth="0.5" opacity="0.2" />
 
-                {/* Decorative Spikes */}
-                {[...Array(36)].map((_, i) => {
-                    const angle = (i * 10) * (Math.PI / 180);
-                    const x1 = 250 + 185 * Math.cos(angle);
-                    const y1 = 250 + 185 * Math.sin(angle);
-                    const x2 = 250 + (i % 2 === 0 ? 195 : 190) * Math.cos(angle);
-                    const y2 = 250 + (i % 2 === 0 ? 195 : 190) * Math.sin(angle);
+                {/* Center Solar Element */}
+                <circle cx="250" cy="250" r="55" fill="none" stroke="var(--color-gold)" strokeWidth="2" opacity="0.7" />
+                <circle cx="250" cy="250" r="45" fill="none" stroke="var(--color-gold)" strokeWidth="1" opacity="0.4" />
+                {[...Array(8)].map((_, i) => {
+                    const angle = (i * 45) * (Math.PI / 180);
                     return (
-                        <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--color-gold)" strokeWidth="0.5" opacity="0.2" />
+                        <line
+                            key={i}
+                            x1={250 + 45 * Math.cos(angle)}
+                            y1={250 + 45 * Math.sin(angle)}
+                            x2={250 + 65 * Math.cos(angle)}
+                            y2={250 + 65 * Math.sin(angle)}
+                            stroke="var(--color-gold)"
+                            strokeWidth="1.5"
+                            opacity="0.6"
+                        />
+                    );
+                })}
+
+                {/* Star Nodes in Constellations */}
+                {[...Array(30)].map((_, i) => {
+                    const r = 100 + Math.random() * 80;
+                    const angle = Math.random() * Math.PI * 2;
+                    return (
+                        <circle
+                            key={i}
+                            cx={250 + r * Math.cos(angle)}
+                            cy={250 + r * Math.sin(angle)}
+                            r={Math.random() * 1.5 + 0.5}
+                            fill="var(--color-light-gold)"
+                            opacity={Math.random() * 0.7 + 0.3}
+                        />
                     );
                 })}
             </svg>

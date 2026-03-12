@@ -15,61 +15,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-/* Ornate Badge Styling */
+/* Ornate Badge Styling - Matches Pill in Image */
 .ornate-badge {
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    padding: 0.6rem 2.5rem;
+    padding: 0.5rem 2.8rem;
     color: var(--color-light-gold);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     z-index: 10;
+    text-transform: none;
+    background: rgba(45, 27, 78, 0.3);
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
 }
 
 .ornate-badge::before,
 .ornate-badge::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 60px;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+    background: linear-gradient(to var(--dir, right), transparent, var(--color-gold));
 }
 
 .ornate-badge::before {
-    top: 0;
+    left: -70px;
+    top: 50%;
+    --dir: right;
 }
 
 .ornate-badge::after {
-    bottom: 0;
+    right: -70px;
+    top: 50%;
+    --dir: left;
 }
 
 .badge-ornament {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border: 1px solid var(--color-gold);
+    background: var(--color-dark-purple);
 }
 
 .badge-ornament.left {
-    left: 0;
+    left: -75px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    border-right: none;
-    border-bottom: none;
 }
 
 .badge-ornament.right {
-    right: 0;
+    right: -75px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    border-left: none;
-    border-top: none;
 }
 
 .hero-title {
@@ -226,18 +232,19 @@
     animation: float 11s ease-in-out infinite;
 }
 
-/* Zodiac Wheel Specifics */
+/* Zodiac Wheel Centering */
 .zodiac-wheel-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(650px, 85vw, 950px);
-    height: clamp(650px, 85vw, 950px);
+    width: clamp(700px, 90vw, 1100px);
+    height: clamp(700px, 90vw, 1100px);
     z-index: 5;
-    opacity: 0.35;
+    opacity: 0.5;
     color: var(--color-gold);
     pointer-events: none;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
 }
 
 .zodiac-wheel-svg {
