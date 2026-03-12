@@ -14,6 +14,8 @@ function App() {
         const path = window.location.pathname;
         if (path === '/privacy' || path === '/privacy/') {
             setLegalModalContent('privacy');
+        } else if (path === '/terms' || path === '/terms/') {
+            setLegalModalContent('terms');
         }
     }, []);
 

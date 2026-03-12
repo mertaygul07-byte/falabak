@@ -25,14 +25,18 @@ const Hero = () => {
                         key={star.id}
                         className="star"
                         style={{
-                            left: star.starLeft,
-                            top: star.starTop,
+                            left: star.left,
+                            top: star.top,
                             width: star.size,
                             height: star.size,
                             '--duration': star.duration,
                         }}
                     />
                 ))}
+            </div>
+
+            <div className="zodiac-wheel-container">
+                <div className="zodiac-wheel"></div>
             </div>
 
             <div className="hero-content">
