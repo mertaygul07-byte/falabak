@@ -36,11 +36,18 @@ const DeleteAccountModal = ({ onClose }) => {
             setErrorMessage('');
             setStep('confirm');
         } catch (error) {
+            console.error('Social login error:', error.code, error.message);
             let msg = 'Giriş yapılırken bir hata oluştu.';
             if (error.code === 'auth/popup-closed-by-user') {
                 msg = 'Giriş penceresi kapatıldı. Lütfen tekrar deneyin.';
             } else if (error.code === 'auth/cancelled-popup-request') {
                 return;
+            } else if (error.code === 'auth/operation-not-allowed') {
+                msg = 'Bu giriş yöntemi şu anda etkin değil. Lütfen başka bir yöntem deneyin.';
+            } else if (error.code === 'auth/popup-blocked') {
+                msg = 'Tarayıcınız açılır pencereyi engelledi. Lütfen izin verin ve tekrar deneyin.';
+            } else if (error.code === 'auth/unauthorized-domain') {
+                msg = 'Bu alan adı yetkilendirilmemiş. Lütfen Firebase Console\'dan alan adını ekleyin.';
             }
             setErrorMessage(msg);
             setStep('error');
