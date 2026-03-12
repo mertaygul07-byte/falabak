@@ -1,8 +1,8 @@
 import React from 'react';
 import './Footer.css';
-import { BookOpen, Shield, FileText } from 'lucide-react';
+import { BookOpen, Shield, Trash2 } from 'lucide-react';
 
-const Footer = ({ onOpenLegal }) => {
+const Footer = ({ onOpenLegal, onOpenDeleteAccount }) => {
     return (
         <footer className="falabak-footer">
             <div className="footer-content">
@@ -15,6 +15,11 @@ const Footer = ({ onOpenLegal }) => {
                     <button className="footer-link" onClick={() => onOpenLegal('privacy')}>
                         <Shield size={16} />
                         Gizlilik Politikası
+                    </button>
+                    <span className="footer-separator">•</span>
+                    <button className="footer-link footer-delete-link" onClick={onOpenDeleteAccount}>
+                        <Trash2 size={16} />
+                        Hesap Sil
                     </button>
                     <a className="footer-link" href="https://falabak.com.tr/privacy" style={{ display: 'none' }}>
                         Gizlilik Politikası (Hidden)

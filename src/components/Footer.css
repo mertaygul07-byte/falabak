@@ -50,3 +50,15 @@
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.85rem;
 }
+
+.footer-delete-link {
+    color: #c0392b !important;
+    opacity: 0.75;
+    transition: all 0.3s ease;
+}
+
+.footer-delete-link:hover {
+    color: #e74c3c !important;
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
+}

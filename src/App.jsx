@@ -6,9 +6,11 @@ import HowItWorks from './components/HowItWorks';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 import LegalModal from './components/LegalModal';
+import DeleteAccountModal from './components/DeleteAccountModal';
 
 function App() {
     const [legalModalContent, setLegalModalContent] = useState(null);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     React.useEffect(() => {
         const path = window.location.pathname;
@@ -16,6 +18,8 @@ function App() {
             setLegalModalContent('privacy');
         } else if (path === '/terms' || path === '/terms/') {
             setLegalModalContent('terms');
+        } else if (path === '/delete' || path === '/delete/') {
+            setShowDeleteModal(true);
         }
     }, []);
 
@@ -35,12 +39,21 @@ function App() {
                 <HowItWorks />
                 <Reviews />
             </main>
-            <Footer onOpenLegal={(type) => setLegalModalContent(type)} />
+            <Footer
+                onOpenLegal={(type) => setLegalModalContent(type)}
+                onOpenDeleteAccount={() => setShowDeleteModal(true)}
+            />
 
             {legalModalContent && (
                 <LegalModal
                     type={legalModalContent}
                     onClose={() => setLegalModalContent(null)}
+                />
+            )}
+
+            {showDeleteModal && (
+                <DeleteAccountModal
+                    onClose={() => setShowDeleteModal(false)}
                 />
             )}
         </div>
