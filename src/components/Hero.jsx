@@ -41,6 +41,7 @@ const Hero = () => {
 
             <ZodiacWheel />
             <FloatingElements />
+            <div className="decor-cloud"></div>
 
             <div className="hero-content">
                 <div className="hero-badge ornate-badge floating">
