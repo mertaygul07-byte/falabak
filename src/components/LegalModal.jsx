@@ -27,7 +27,7 @@ const LegalModal = ({ type, onClose }) => {
                             <p className="last-updated">Son Güncelleme Tarihi: 05 Nisan 2026</p>
 
                             <h3>1. Taraflar ve Kabul</h3>
-                            <p>Bu Kullanım Şartları, FalaBak mobil uygulamasını ve web sitesini (bundan böyle &quot;Platform&quot; olarak anılacaktır) kullanan kişi (&quot;Kullanıcı&quot;) ile FalaBak (&quot;Şirket&quot;) arasında düzenlenmiştir. Platformu kullanarak bu şartları kabul etmiş sayılırsınız. Şartları kabul etmiyorsanız, lütfen Platformu kullanmayınız.</p>
+                            <p>Bu Kullanım Şartları, Faltanat mobil uygulamasını ve web sitesini (bundan böyle &quot;Platform&quot; olarak anılacaktır) kullanan kişi (&quot;Kullanıcı&quot;) ile Faltanat (&quot;Şirket&quot;) arasında düzenlenmiştir. Platformu kullanarak bu şartları kabul etmiş sayılırsınız. Şartları kabul etmiyorsanız, lütfen Platformu kullanmayınız.</p>
 
                             <h3>2. Hizmetin Doğası (Eğlence ve Yapay Zeka)</h3>
                             <ul>
