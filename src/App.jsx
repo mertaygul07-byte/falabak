@@ -6,6 +6,7 @@ import HowItWorks from './components/HowItWorks';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 import LegalModal from './components/LegalModal';
+import AccountDeletion from './components/AccountDeletion';
 
 function App() {
     const [legalModalContent, setLegalModalContent] = useState(null);
@@ -16,6 +17,12 @@ function App() {
             setLegalModalContent('privacy');
         } else if (path === '/terms' || path === '/terms/') {
             setLegalModalContent('terms');
+        } else if (path === '/delete-account' || path === '/delete-account/') {
+            // Scroll to account deletion section
+            setTimeout(() => {
+                const el = document.getElementById('hesap-sil');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
         }
     }, []);
 
@@ -34,6 +41,7 @@ function App() {
                 <FortuneTelling />
                 <HowItWorks />
                 <Reviews />
+                <AccountDeletion />
             </main>
             <Footer onOpenLegal={(type) => setLegalModalContent(type)} />
 

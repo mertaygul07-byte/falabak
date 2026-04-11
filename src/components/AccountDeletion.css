@@ -1,0 +1,310 @@
+.account-deletion-section {
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.account-deletion-container {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Header */
+.ad-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ad-icon-wrapper {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(248, 113, 113, 0.15);
+}
+
+.ad-icon {
+    color: #f87171;
+}
+
+.ad-header h2 {
+    font-size: 2.2rem;
+}
+
+.ad-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+/* Warning */
+.ad-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    background: rgba(200, 50, 50, 0.08);
+    border: 1px solid rgba(220, 80, 80, 0.25);
+    color: #fca5a5;
+    font-size: 0.97rem;
+    line-height: 1.6;
+}
+
+.ad-warning-icon {
+    color: #fb923c;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Form */
+.ad-form {
+    padding: 2.5rem;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ad-form-title {
+    font-size: 1.3rem;
+    color: var(--color-light-gold);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.ad-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ad-field label {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.ad-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    outline: none;
+    width: 100%;
+}
+
+.ad-input:focus {
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.ad-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.ad-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.ad-select option {
+    background: #12072b;
+    color: var(--color-text);
+}
+
+.ad-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.ad-checkbox {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--color-gold);
+    cursor: pointer;
+}
+
+.ad-error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.1rem;
+    border-radius: 10px;
+    background: rgba(220, 80, 80, 0.12);
+    border: 1px solid rgba(220, 80, 80, 0.3);
+    color: #fca5a5;
+    font-size: 0.9rem;
+}
+
+.ad-submit-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #c0392b, #922b21);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 20px rgba(192, 57, 43, 0.4);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.ad-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(192, 57, 43, 0.55);
+}
+
+/* Success State */
+.ad-success {
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-color: rgba(74, 222, 128, 0.2);
+}
+
+.ad-success-icon {
+    color: #4ade80;
+    stroke-width: 1.5;
+}
+
+.ad-success h3 {
+    font-size: 1.6rem;
+    color: #4ade80;
+}
+
+.ad-success p {
+    color: var(--color-text-muted);
+    font-size: 0.97rem;
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+.ad-success-note {
+    font-size: 0.87rem !important;
+    opacity: 0.7;
+}
+
+.ad-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--color-text-muted);
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: all 0.25s ease;
+}
+
+.ad-back-btn:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    color: var(--color-gold);
+}
+
+/* FAQ */
+.ad-faq {
+    display: flex;
+    flex-direction: column;
+}
+
+.ad-faq-title {
+    font-size: 1.4rem;
+    color: var(--color-light-gold);
+    margin-bottom: 1.2rem;
+}
+
+.ad-faq-item {
+    border-radius: 14px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease;
+}
+
+.ad-faq-item.open {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.25);
+}
+
+.ad-faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    font-size: 0.98rem;
+    font-weight: 500;
+    text-align: left;
+    transition: color 0.2s ease;
+    font-family: inherit;
+}
+
+.ad-faq-question:hover {
+    color: var(--color-gold);
+}
+
+.ad-faq-answer {
+    padding: 0 1.5rem 1.25rem;
+}
+
+.ad-faq-answer p {
+    font-size: 0.93rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+    .ad-header h2 {
+        font-size: 1.7rem;
+    }
+    .ad-form {
+        padding: 1.5rem;
+    }
+}

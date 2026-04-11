@@ -19,7 +19,7 @@ const Navbar = ({ onOpenLegal }) => {
             <div className="navbar-container">
                 {/* Logo */}
                 <a href="/" className="navbar-logo">
-                    <img src="/logo.jpeg" alt="FalaBak Logo" className="navbar-logo-img" />
+                    <img src="/logo.jpeg" alt="FalTanat Logo" className="navbar-logo-img" />
                 </a>
 
                 {/* Desktop Links */}
@@ -34,7 +34,7 @@ const Navbar = ({ onOpenLegal }) => {
                 {/* Action Buttons */}
                 <div className="navbar-actions">
                     <a
-                        href="https://www.instagram.com/falabak.app/"
+                        href="https://www.instagram.com/faltanat.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="instagram-link"

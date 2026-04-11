@@ -26,8 +26,10 @@
 
 .fortune-container {
     padding: 3rem;
-    border-radius: 24px;
-    background: rgba(26, 11, 46, 0.4);
+    border-radius: 28px;
+    background: rgba(18, 7, 43, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(212, 175, 55, 0.08);
 }
 
 .upload-section h3,
@@ -117,15 +119,16 @@
 }
 
 .teller-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(212, 175, 55, 0.35);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .teller-card.selected {
     border-color: var(--gold);
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(157, 78, 221, 0.05));
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(157, 78, 221, 0.08));
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.25), 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .teller-card h4 {

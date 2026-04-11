@@ -7,7 +7,7 @@ const Reviews = () => {
         {
             id: 1,
             name: "Ayşe K.",
-            review: "Falabak'taki yorumcular gerçekten harika! Söyledikleri her şey teker teker çıktı. Artık kahvemi içtikten sonra ilk işim buraya falımı göndermek.",
+            review: "FalTanat'taki yorumcular gerçekten harika! Söyledikleri her şey teker teker çıktı. Artık kahvemi içtikten sonra ilk işim buraya falımı göndermek.",
             rating: 5
         },
         {

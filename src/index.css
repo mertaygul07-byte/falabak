@@ -1,18 +1,19 @@
 :root {
-  --color-dark-purple: #1a0b2e;
-  --color-midnight-blue: #0f172a;
-  --color-deep-purple: #2d1b4e;
+  --color-dark-purple: #12072b;
+  --color-midnight-blue: #0a1020;
+  --color-deep-purple: #221055;
   --color-gold: #d4af37;
   --gold: #FFD700;
-  --color-rose-gold: #b76e79;
-  --color-light-gold: #f3e5ab;
+  --color-rose-gold: #c27b86;
+  --color-light-gold: #f5e5a0;
   --color-text: #f8f9fa;
-  --color-text-muted: #cbd5e1;
+  --color-text-muted: #c8d4e8;
 
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  --gold-glow: 0 0 15px rgba(212, 175, 55, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(212, 175, 55, 0.15);
+  --glass-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.5);
+  --gold-glow: 0 0 20px rgba(212, 175, 55, 0.5);
+  --purple-glow: 0 0 30px rgba(130, 50, 200, 0.3);
 }
 
 html {

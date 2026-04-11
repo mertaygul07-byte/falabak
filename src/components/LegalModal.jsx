@@ -23,22 +23,22 @@ const LegalModal = ({ type, onClose }) => {
                 <div className="legal-modal-scroll-area">
                     {isTerms ? (
                         <div className="legal-text-container">
-                            <h2>FalaBak Kullanım Şartları (Terms of Use)</h2>
+                            <h2>FalTanat Kullanım Şartları (Terms of Use)</h2>
                             <p className="last-updated">Son Güncelleme Tarihi: 09 Mart 2026</p>
 
                             <h3>1. Taraflar ve Kabul</h3>
-                            <p>Bu Kullanım Şartları, FalaBak web sitesini ve mobil uygulamasını (bundan böyle &quot;Platform&quot; olarak anılacaktır) kullanan kişi (&quot;Kullanıcı&quot;) ile FalaBak (&quot;Şirket&quot;) arasında düzenlenmiştir. Platformu kullanarak bu şartları kabul etmiş sayılırsınız. Şartları kabul etmiyorsanız, lütfen Platformu kullanmayınız.</p>
+                            <p>Bu Kullanım Şartları, FalTanat web sitesini ve mobil uygulamasını (bundan böyle &quot;Platform&quot; olarak anılacaktır) kullanan kişi (&quot;Kullanıcı&quot;) ile FalTanat (&quot;Şirket&quot;) arasında düzenlenmiştir. Platformu kullanarak bu şartları kabul etmiş sayılırsınız. Şartları kabul etmiyorsanız, lütfen Platformu kullanmayınız.</p>
 
                             <h3>2. Hizmetin Doğası (Eğlence Amacı)</h3>
                             <ul>
-                                <li>FalaBak, kullanıcılarına kahve falı, tarot, astroloji ve benzeri mistik yorumlar sunan bir eğlence platformudur.</li>
+                                <li>FalTanat, kullanıcılarına kahve falı, tarot, astroloji ve benzeri mistik yorumlar sunan bir eğlence platformudur.</li>
                                 <li>Platformda sunulan yorumlar, tahminler ve analizler tamamen algoritmik ve kurgusal olup, gerçekliği garanti edilemez.</li>
-                                <li>Sunulan içerikler hiçbir koşulda psikolojik, tıbbi, hukuki, finansal veya profesyonel bir tavsiye niteliği taşımaz. Kullanıcıların, bu yorumlara dayanarak alacakları kararlardan FalaBak ve çalışanları sorumlu tutulamaz.</li>
+                                <li>Sunulan içerikler hiçbir koşulda psikolojik, tıbbi, hukuki, finansal veya profesyonel bir tavsiye niteliği taşımaz. Kullanıcıların, bu yorumlara dayanarak alacakları kararlardan FalTanat ve çalışanları sorumlu tutulamaz.</li>
                             </ul>
 
                             <h3>3. Kullanıcı Yükümlülükleri</h3>
                             <ul>
-                                <li><strong>Yaş Sınırı:</strong> FalaBak hizmetlerinden yararlanabilmek için en az 18 yaşında olmanız gerekmektedir.</li>
+                                <li><strong>Yaş Sınırı:</strong> FalTanat hizmetlerinden yararlanabilmek için en az 18 yaşında olmanız gerekmektedir.</li>
                                 <li><strong>İçerik Yükleme:</strong> Fal yorumlanması için yüklediğiniz fotoğrafların (fincan, el vb.) üçüncü şahısların gizliliğini ihlal etmediğinden, müstehcen veya yasadışı unsurlar içermediğinden emin olmalısınız.</li>
                                 <li><strong>Hesap Güvenliği:</strong> Hesap bilgilerinizin gizliliğini korumak sizin sorumluluğunuzdadır.</li>
                             </ul>
@@ -47,14 +47,14 @@ const LegalModal = ({ type, onClose }) => {
                             <p>Platformdaki bazı hizmetler (özel yorumcular, VIP fal vb.) ücrete veya uygulama içi kredi sistemine tabi olabilir. Satın alınan dijital içerikler ve krediler anında ifa edildiği için, yasal cayma hakkı kapsamı dışındadır ve kural olarak iade edilmez.</p>
 
                             <h3>5. Fikri Mülkiyet</h3>
-                            <p>FalaBak'ın isim hakkı, logosu, tasarımı, metinleri ve algoritmaları Şirketimize aittir ve telif hakları yasaları ile korunmaktadır. İzinsiz kopyalanamaz veya çoğaltılamaz.</p>
+                            <p>FalTanat'ın isim hakkı, logosu, tasarımı, metinleri ve algoritmaları Şirketimize aittir ve telif hakları yasaları ile korunmaktadır. İzinsiz kopyalanamaz veya çoğaltılamaz.</p>
 
                             <h3>6. Değişiklikler</h3>
-                            <p>FalaBak, bu Kullanım Şartları'nı dilediği zaman değiştirme hakkını saklı tutar. Yapılan değişiklikler Platformda yayınlandığı andan itibaren geçerli olur.</p>
+                            <p>FalTanat, bu Kullanım Şartları'nı dilediği zaman değiştirme hakkını saklı tutar. Yapılan değişiklikler Platformda yayınlandığı andan itibaren geçerli olur.</p>
                         </div>
                     ) : (
                         <div className="legal-text-container">
-                            <h2>FalaBak Gizlilik Politikası ve KVKK Aydınlatma Metni</h2>
+                            <h2>FalTanat Gizlilik Politikası ve KVKK Aydınlatma Metni</h2>
                             <p className="last-updated">Son Güncelleme Tarihi: 09 Mart 2026</p>
 
                             <h3>1. Hangi Verileri Topluyoruz?</h3>

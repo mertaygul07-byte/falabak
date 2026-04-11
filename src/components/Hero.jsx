@@ -56,7 +56,7 @@ const Hero = () => {
                 </h1>
 
                 <p className="hero-subtitle">
-                    FalaBak ile kahve falı, tarot ve yıldıznamenin mistik dünyasına adım at. Gerçek yorumcularla geleceğine ışık tut.
+                    FalTanat ile kahve falı, tarot ve yıldıznamenin mistik dünyasına adım at. Gerçek yorumcularla geleceğine ışık tut.
                 </p>
 
                 <div className="hero-buttons">

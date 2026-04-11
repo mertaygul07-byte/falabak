@@ -34,7 +34,7 @@ const HowItWorks = () => {
         <section id="nasil-calisir" className="how-it-works-section">
             <div className="section-header">
                 <h2 className="brand-font text-gradient">Nasıl Çalışır?</h2>
-                <p className="subtitle">Falabak deneyimini keşfetmek sadece birkaç adım uzağınızda.</p>
+                <p className="subtitle">FalTanat deneyimini keşfetmek sadece birkaç adım uzağınızda.</p>
             </div>
 
             <div className="cards-container">

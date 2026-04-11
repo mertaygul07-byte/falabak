@@ -1,10 +1,10 @@
 import React from 'react';
 import './Footer.css';
-import { BookOpen, Shield, FileText } from 'lucide-react';
+import { BookOpen, Shield, Trash2 } from 'lucide-react';
 
 const Footer = ({ onOpenLegal }) => {
     return (
-        <footer className="falabak-footer">
+        <footer className="faltanat-footer">
             <div className="footer-content">
                 <div className="footer-links">
                     <button className="footer-link" onClick={() => onOpenLegal('terms')}>
@@ -16,18 +16,23 @@ const Footer = ({ onOpenLegal }) => {
                         <Shield size={16} />
                         Gizlilik Politikası
                     </button>
-                    <a className="footer-link" href="https://falabak.com.tr/privacy" style={{ display: 'none' }}>
+                    <span className="footer-separator">•</span>
+                    <a className="footer-link footer-link-danger" href="#hesap-sil">
+                        <Trash2 size={16} />
+                        Hesap Sil
+                    </a>
+                    <a className="footer-link" href="https://faltanat.com.tr/privacy" style={{ display: 'none' }}>
                         Gizlilik Politikası (Hidden)
                     </a>
-                    <a className="footer-link" href="https://falabak.com.tr/terms" style={{ display: 'none' }}>
+                    <a className="footer-link" href="https://faltanat.com.tr/terms" style={{ display: 'none' }}>
                         Kullanım Şartları (Hidden)
                     </a>
-                    <a className="footer-link" href="https://www.falabak.com.tr/app-ads.txt" style={{ display: 'none' }}>
+                    <a className="footer-link" href="https://www.faltanat.com.tr/app-ads.txt" style={{ display: 'none' }}>
                         App Ads (Hidden)
                     </a>
                 </div>
                 <div className="footer-copyright">
-                    &copy; {new Date().getFullYear()} FalaBak. Tüm hakları saklıdır.
+                    &copy; {new Date().getFullYear()} FalTanat. Tüm hakları saklıdır.
                 </div>
             </div>
         </footer>
