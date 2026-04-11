@@ -4,8 +4,6 @@ import './AccountDeletion.css';
 
 const AccountDeletion = () => {
     const [openFaq, setOpenFaq] = useState(null);
-    const [email, setEmail] = useState('');
-    const [reason, setReason] = useState('');
     const [confirmed, setConfirmed] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState('');
@@ -77,58 +75,44 @@ const AccountDeletion = () => {
                     /* Success State */
                     <div className="ad-success glass">
                         <CheckCircle2 size={48} className="ad-success-icon" />
-                        <h3 className="brand-font">Talebiniz Alındı!</h3>
+                        <h3 className="brand-font">E-posta Uygulamanız Açıldı</h3>
                         <p>
-                            <strong>{email}</strong> adresine bağlı hesabınız için silme talebiniz e-posta
-                            uygulamanız üzerinden gönderildi. E-postanın gerçekten gönderildiğini onaylayın.
+                            Hesap silme talebiniz için cihazınızdaki varsayılan e-posta uygulaması açılıyor.
+                            Lütfen bilgilerinizi doldurup e-postayı <strong>faltanatsupport@gmail.com</strong> adresine gönderin.
                         </p>
                         <p className="ad-success-note">
-                            2 iş günü içinde size dönüş yapılacak ve talebiniz 30 gün içinde tamamlanacaktır.
+                            E-postanız bize ulaştıktan sonra, talebiniz 2 iş günü içinde işleme alınacak ve ilgili hesap 30 gün içinde tamamen silinecektir.
                         </p>
-                        <button className="ad-back-btn" onClick={() => { setSubmitted(false); setEmail(''); setReason(''); setConfirmed(false); }}>
+                        <button className="ad-back-btn" onClick={() => setSubmitted(false)}>
                             <ArrowLeft size={16} />
                             Geri Dön
                         </button>
                     </div>
                 ) : (
-                    /* Deletion Form */
-                    <form className="ad-form glass" onSubmit={handleSubmit}>
+                    /* Deletion Form Box */
+                    <div className="ad-form glass">
                         <h3 className="brand-font ad-form-title">
                             <Mail size={20} />
-                            Silme Talebi Formu
+                            Silme Talebi Oluştur
                         </h3>
 
-                        <div className="ad-field">
-                            <label htmlFor="del-email">Kayıtlı E-posta Adresiniz *</label>
-                            <input
-                                id="del-email"
-                                type="email"
-                                placeholder="ornek@email.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="ad-input"
-                                required
-                            />
-                        </div>
+                        <p className="ad-text-instruction">
+                            Hesabınızı ve tüm verilerinizi platformumuzdan kalıcı olarak silmek istiyorsanız,
+                            lütfen sisteme <strong>kayıt olduğunuz e-posta adresi</strong> üzerinden aşağıdaki adrese bir e-posta gönderin.
+                        </p>
 
-                        <div className="ad-field">
-                            <label htmlFor="del-reason">Silme Nedeniniz (İsteğe Bağlı)</label>
-                            <select
-                                id="del-reason"
-                                value={reason}
-                                onChange={(e) => setReason(e.target.value)}
-                                className="ad-input ad-select"
-                            >
-                                <option value="">Seçiniz...</option>
-                                <option value="Uygulamayı artık kullanmıyorum">Uygulamayı artık kullanmıyorum</option>
-                                <option value="Gizlilik endişeleri">Gizlilik endişeleri</option>
-                                <option value="Başka bir hesabım var">Başka bir hesabım var</option>
-                                <option value="Uygulama beklentilerimi karşılamıyor">Uygulama beklentilerimi karşılamıyor</option>
-                                <option value="Diğer">Diğer</option>
-                            </select>
+                        <div className="ad-direct-email">
+                            <span className="ad-direct-email-label">E-posta Gönderilecek Adres:</span>
+                            <a href="mailto:faltanatsupport@gmail.com" className="ad-direct-email-link">
+                                faltanatsupport@gmail.com
+                            </a>
                         </div>
+                        
+                         <p style={{marginTop: '1rem', color: 'var(--color-text-muted)', fontSize: '0.95rem'}}>
+                            Aşağıdaki butona tıklayarak otomatik doldurulmuş bir e-posta taslağı oluşturabilirsiniz.
+                        </p>
 
-                        <label className="ad-checkbox-label">
+                        <label className="ad-checkbox-label" style={{marginTop: '0.5rem', marginBottom: '1rem'}}>
                             <input
                                 type="checkbox"
                                 checked={confirmed}
@@ -148,11 +132,25 @@ const AccountDeletion = () => {
                             </div>
                         )}
 
-                        <button type="submit" className="ad-submit-btn btn-primary glowing-gold brand-font">
+                        <button onClick={(e) => {
+                             e.preventDefault();
+                             if (!confirmed) {
+                                 setError('Devam edebilmek için onay kutusunu işaretlemeniz gerekiyor.');
+                                 return;
+                             }
+                             setError('');
+                             const subject = encodeURIComponent('Hesap Silme Talebi - FalTanat');
+                             const body = encodeURIComponent(
+                                 'Merhaba,\n\FalTanat uygulamasına kayıtlı aşağıdaki hesabımın ve tüm verilerimin kalıcı olarak silinmesini talep ediyorum.\n\nKayıtlı E-posta Adresim: [LÜTFEN BURAYA KAYITLI E-POSTANIZI YAZIN]\nUygulama İçi Kullanıcı Adım (varsa): [BURAYA YAZIN]\n\nBu talepten itibaren 30 gün içinde hesabım ve tüm verilerim kalıcı olarak silinsin.\n\nSaygılarımla.'
+                             );
+                     
+                             window.location.href = `mailto:faltanatsupport@gmail.com?subject=${subject}&body=${body}`;
+                             setSubmitted(true);
+                        }} className="ad-submit-btn btn-primary glowing-gold brand-font">
                             <Send size={18} />
-                            Silme Talebimi Gönder
+                            Faltanat Support'a Mail Gönder (Uygulamayı Aç)
                         </button>
-                    </form>
+                    </div>
                 )}
 
                 {/* FAQ */}

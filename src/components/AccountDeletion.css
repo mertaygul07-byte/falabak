@@ -85,52 +85,50 @@
     margin-bottom: 0.5rem;
 }
 
-.ad-field {
+/* Form Content */
+.ad-text-instruction {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.ad-text-instruction strong {
+    color: var(--color-gold);
+}
+
+.ad-direct-email {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
-}
-
-.ad-field label {
-    font-size: 0.92rem;
-    color: var(--color-text-muted);
-    font-weight: 500;
-}
-
-.ad-input {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1.5rem;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 12px;
-    padding: 0.85rem 1.1rem;
-    color: var(--color-text);
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    outline: none;
-    width: 100%;
+    margin-bottom: 1rem;
 }
 
-.ad-input:focus {
-    border-color: rgba(212, 175, 55, 0.5);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+.ad-direct-email-label {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-.ad-input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+.ad-direct-email-link {
+    font-size: 1.4rem;
+    color: var(--color-gold);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.ad-select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    padding-right: 2.5rem;
-}
-
-.ad-select option {
-    background: #12072b;
-    color: var(--color-text);
+.ad-direct-email-link:hover {
+    color: var(--color-light-gold);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    transform: scale(1.02);
 }
 
 .ad-checkbox-label {
